@@ -1,0 +1,24 @@
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/ncg2020MiniProject?createDatabaseIfNotExist=true
+spring.datasource.username={username}
+spring.datasource.password={password}
+spring.jpa.show-sql=true
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.generate-ddl=true
+
+#for persistent data
+spring.jpa.hibernate.ddl-auto=update
+
+# start afresh
+#spring.jpa.hibernate.ddl-auto=create
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=465
+spring.mail.username=roombookapp@gmail.com
+spring.mail.password=RoomBookApp
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+spring.mail.properties.mail.smtp.socketFactory.fallback=false
+spring.mail.properties.mail.smtp.connectiontimeout=5000
+spring.mail.properties.mail.smtp.writetimeout=5000

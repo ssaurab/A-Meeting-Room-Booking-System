@@ -1,0 +1,9 @@
+.app-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MuiCheckbox-colorPrimary.Mui-disabled {
+  display: none;
+  color: rgba(0, 0, 0, 0.26);
+}

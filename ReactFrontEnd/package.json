@@ -1,0 +1,93 @@
+{
+  "name": "roombooking-react-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rimraf ./build && react-scripts build",
+    "combine": "rimraf ../SpringServer/src/main/resources/static && copyfiles -u 1 -a build/**/*.* ../SpringServer/src/main/resources/static",
+    "build-jar-skip-test": "npm run build -s && npm run combine -s && cd ../SpringServer && rimraf ../SpringServer/target && mvn package -DskipTests",
+    "build-jar": "npm run build -s && npm run combine -s && cd ../SpringServer && rimraf ../SpringServer/target && mvn package",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(scss|sass|css|svg)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:8080/",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@reduxjs/toolkit": "^1.4.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest-environment-puppeteer": "^4.3.2",
+    "@types/puppeteer": "^3.0.2",
+    "axios": "^0.20.0",
+    "css-toggle-switch": "^4.1.0",
+    "error-ex": "git+https://github.com/Qix-/node-error-ex.git",
+    "faker": "^5.1.0",
+    "i": "^0.3.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-canvas-mock": "^2.2.0",
+    "jest-puppeteer": "^4.4.0",
+    "material-table": "^1.69.0",
+    "material-ui-table-edit": "^3.0.3",
+    "muicss": "^0.10.2",
+    "pptr-testing-library": "^0.6.4",
+    "puppeteer": "^5.3.1",
+    "react": "^16.13.1",
+    "react-currency-format": "^1.0.0",
+    "react-dom": "^16.13.1",
+    "react-images-upload": "^1.2.8",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-switch": "^5.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "ts-jest": "^26.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.54",
+    "@types/react": "^16.9.48",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/redux-logger": "^3.0.8",
+    "copyfiles": "^2.3.0",
+    "typescript": "^3.8.3"
+  }
+}
